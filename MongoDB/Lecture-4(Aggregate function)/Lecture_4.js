@@ -1,7 +1,7 @@
 db.Book.find()
 
 // aggregation pipeline => []
- db.Book.find({"country" : "Italy", "language" : "Italian"})
+db.Book.find({"country" : "Italy", "language" : "Italian"})
 
 db.Book.aggregate([
     {
@@ -11,7 +11,7 @@ db.Book.aggregate([
 
 
 
-// --------- 3 type prticuler column show --------------------
+// --------- 3 type praticuler column show ----------
 db.Book.find({} , {"author":1, _id:0, title:1 , "year":1})
 db.Book.find({}).select({"author":1, _id:0, title:1 })
 db.Book.find({}).project({year:1 , title:1})
@@ -59,3 +59,5 @@ db.Book.aggregate([
     {$match : {country: "Italy"}},
     {$count : "country"}
     ])
+
+    
